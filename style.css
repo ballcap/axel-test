@@ -26,7 +26,6 @@ section > div,
 footer > div {
     padding: 50px 30px; /* padding: 50px 30px; but Axel phone is too tiny*/
     flex: 1;
-    max-width: 100%;
 }
 
 footer {
