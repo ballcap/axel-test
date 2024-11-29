@@ -4,220 +4,63 @@
 
 body {
     margin: 0;
-    overflow-x: hidden;
     background: #efefef;
     font-family: "Kiwi Maru", serif;
     font-style: normal;
     font-size: 1.2em;
 }
 
-header,
-nav,
-section,
-footer {
+section {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
 }
 
-header > div,
-nav > div,
-section > div,
-footer > div {
-    padding: 50px 30px; /* padding: 50px 30px; but Axel phone is too tiny*/
+section > div {
     flex: 1;
-}
-
-footer {
+    width: 50%;
     text-align: center;
-    color: #c928c8;
-    background: rgb(2,0,36);
-    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(112,87,165,1) 77%, rgba(143,112,201,1) 100%, rgba(0,212,255,1) 100%);
+    margin: auto;
 }
 
-footer h1 {
-    font-size: 4em;
-    background: linear-gradient(#7c00cf, #c441e7);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.flip-box-back {
-    background: linear-gradient(#7c00cf, #c441e7);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-header {
-    align-items: baseline;
-    background: #98a4b4;
-}
-
-.header-left {
-    background: #eaebed;
-    color: #4a545c;
-    flex-basis: 60%;
-}
-
-.header-left h1 {
-    font-size: 2em;
-    margin: 5px;
-}
-
-.header-right {
-    color: #fff;
-    flex-basis: 40%;
-}
-
-.header-top {
-    background: url(https://i.ibb.co/0QkgXr5/168-DF08-E-DA76-4511-8715-2-D0-D12-B14089.jpgg) no-repeat fixed center;
-    background-size: cover;
-    color: #fff;
-    text-align: center;
-    padding 500px 0;
-    width: 100%;
-}
-
-/* iOS-specific styles */
-@supports (-webkit-overflow-scrolling: touch) {
-    .header-top {
-        background-attachment: scroll;
-    }
-}
-
-.header-top h1 {
-    background: linear-gradient(#7c00cf, #c441e7);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 3.7em;
-}
-
-button {
-    color: #4a545c;
-    border: solid 1px #4a545c;
-    border-radius: 30px;
-    padding: 10px 30px;
-    margin: 40px 0;
-}
-
-button:hover {
-    cursor: pointer;
-    color: #eaebed;
-    border: solid 1px #98a4b4;
-    background: #98a4b4;
-}
-
-ul li {
-    font-size: 1.1em;
-    line-height: 40px;
-}
-
-.features {
-    background: #495667;
+.section-1 {
+    height: 50vh;
+    background-image: linear-gradient(45deg, #888, #000);
     color: #fff;
 }
 
-.features h1 { font-size: 2em; }
-
-.features-left { flex-basis: 50%; }
-
-.features-right {
-    border-left: solid 1px #ced9e9;
-    flex-basis: 50%;
+.section-1 img {
+    height: 50vh;
+    width: 50vw;
 }
 
-.gallery {
-    background: #fff;
-    text-align: center;
-    color: #841563;
-}
-
-.gallery h1 {
-    background: linear-gradient(#7c00cf, #c441e7);
+.section-1 h1 {
+    font-size: 3em;
+    background: -webkit-linear-gradient(pink, purple);
     -webkit-background-clip: text;
-    background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 2.2em;
 }
 
-img { width: 100%; }
+.section-2 {
+    height: 50vh;
+    text-align: center;
+    background: red;
+}
 
-form input[type="email"] {
+.section-2 a {
     display: block;
-    color: #39f;
-    width: 70%;
-    margin: 50px auto 25px auto;
-    font-size: 1em;
-    border: solid 2px #efefef;
-    background: /*inherit*/#efefef;
-    padding: 6px 20px;
-    border-radius: 6px;
-    text-align: center;
+    background: green;
+    padding: 30px;
+    color: #fff;
+    font-weight: 800;
+    width: 30%;
+    border-radius: 7px;
+    border: solid 1px #aaa;
+    margin: auto;
 }
 
-form input[type="email"]:focus { border: solid 2px #39f; }
+.section-2 a:hover { background: red; }
 
-.footer-copyright {
-    background: #1a1a1a;
-    color: #eaeaea;
-    font-size: .8em;
+input {
+    width: 100%;
+    margin: 20px 0;
 }
-
-.footer-copyright > div { padding: 10px; }
-
-.flip-box {
-  background-color: transparent;
-  width: 300px; /* Set a fixed width */
-  height: 500px; /* Set a fixed height */
-  perspective: 1000px; /* Enable 3D effect */
-  margin: auto; /* Center the box if needed */
-  position: relative; /* Ensure this box acts as the reference for absolute children */
-  overflow: hidden; /* Prevent children from overflowing */
-  /*max-width: 100%;*/
-}
-
-.flip-box-inner {
-  position: absolute; /* Positioned within the parent container */
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.5s;
-  transform-style: preserve-3d;
-}
-
-.flip-box:hover .flip-box-inner { transform: rotateY(180deg); /* Flip effect on hover */ }
-
-.flip-box-front, .flip-box-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Support for Safari */
-  backface-visibility: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flip-box-front img {
-  width: 100%; /* Ensure the image scales to fit the front side */
-  height: 100%; /* Make the image fill the box */
-  object-fit: cover; /* Maintain image proportions */
-}
-
-.flip-box-back {
-  background-color: /*#3a1baa*/;
-  color: #9315d7;
-  transform: rotateY(180deg); /* Flip this side */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px; /* Add padding for text readability */
-}
-
-.hidden { display: none; }
-
-.title-font { font-size: 1.1em; }
-.title-font-no { font-size: .8em; }
