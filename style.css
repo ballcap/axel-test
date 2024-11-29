@@ -47,12 +47,11 @@ section > div {
 }
 
 .section-2 a {
-    display: block;
+    display: inline-block;
     background: green;
-    padding: 30px;
+    padding: 30px 60px;
     color: #fff;
     font-weight: 800;
-    width: 30%;
     border-radius: 7px;
     border: solid 1px #aaa;
     margin: auto;
