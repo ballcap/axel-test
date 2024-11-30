@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    color: #fff;
+    background: #06000d;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+section > div {
+    flex: 1;
+    text-align: center;
+    margin: auto;
+}
+
+.section-1 {
+    background: url("maki-website/Attachment-1.png") center no-repeat;
+    background-size: contain;
+    height: 50vh;
+}
+
+.section-2 {
+    height: 50vh;
+    text-align: center;
+}
+
+.section-2 a {
+    display: inline-block;
+    background: #3300b3;
+    padding: 15px 20px;
+    color: #fff;
+    font-weight: 800;
+    border-radius: 7px;
+    border: none;
+    margin: auto;
+    text-decoration: none;
+    transition: transform .5s ease;
+}
+
+.section-2 a:hover {
+    color: #a2a2a2;
+    transform: scale(1.1);
+}
+
+.section-2 h1 {
+    font-size: 4em;
+    background-image: linear-gradient(to right, #7c00cf, #cc1bb8, #c248f1);
+    color: transparent;
+    background-clip: text;
+    margin: 20px;
+}
+
+.section-3 form {
+    width: 50%;
+    padding: 10px 0;
+}
+
+.section-3 input {
+    width: 100%;
+    margin: 20px 0;
+}
+
+footer {
+    font-size: .9em;
+    text-align: center;
+}
