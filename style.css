@@ -110,9 +110,10 @@ section > div {
 
 .section-4 input[type="email"] {
     border-radius: 6px;
-    padding: 10px 0;
+    padding: 5px 0;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.1em;
+    background: #afafaf;
 }
 
 .section-4 button {
