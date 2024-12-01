@@ -102,7 +102,7 @@ section > div {
     background: inherit;
     color: #fff;
     font-weight: 600;
-    transition: background 2s;
+    transition: background 1s, color 1s;
 }
 
 .section-3 button:hover {
