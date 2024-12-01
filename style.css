@@ -72,8 +72,7 @@ section > div {
     margin: 20px;
 }
 
-.section-3 h1,
-.section-4 h1 {
+.section-3 h1 {
     font-size: 2.1em;
     /*background-image: linear-gradient(to right, #de07f7, #ef8280);*/
     background-image: linear-gradient(#0af8c6, #0ac6f8);
@@ -82,8 +81,7 @@ section > div {
     margin: 20px 0;
 }
 
-.section-3 span,
-.section-4 span {
+.section-3 span {
     color: #fff;
     font-size: .4em;
 }
@@ -91,19 +89,32 @@ section > div {
 .section-3 p,
 .section-4 p { color: #888; }
 
-.section-3 form,
 .section-4 form {
     width: 100%;
     padding: 10px 0;
 }
 
-.section-3 input,
+.section-4 h1 {
+    font-size: 3em;
+    /*background-image: linear-gradient(to right, #de07f7, #ef8280);*/
+    background-image: linear-gradient(to right, #17b3fd, #cd49eb);
+    color: transparent;
+    background-clip: text;
+    margin: 20px 0;
+}
+
 .section-4 input {
     width: 100%;
     margin: 20px 0;
 }
 
-.section-3 button,
+.section-4 input[type="email"] {
+    border-radius: 6px;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 1.2em;
+}
+
 .section-4 button {
     border-radius: 6px;
     border: solid 2px #fff;
@@ -112,9 +123,9 @@ section > div {
     font-weight: 600;
     transition: background .4s, color .4s;
     padding: 13px 22px;
+    margin-top: 50px;
 }
 
-.section-3 button:hover,
 .section-4 button:hover {
     background: #fff;
     color: #111;
