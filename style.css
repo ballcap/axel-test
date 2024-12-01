@@ -5,11 +5,12 @@ body {
     font-size: 1.1em;
 }
 
-nav { padding: 20px; }
+nav { padding: 7px 20px; }
 
 nav a {
     text-decoration: none;
     color: #fff;
+    font-size: .7em;
 }
 
 nav a:hover {
