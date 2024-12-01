@@ -60,6 +60,7 @@ section > div {
     color: transparent;
     background-clip: text;
     margin: 20px;
+    text-align: left;
 }
 
 .section-3 span {
