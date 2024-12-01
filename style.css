@@ -100,7 +100,7 @@ section > div {
 
 .section-4 label { 
     font-size: .8em;
-    margin: 50px 0 7px 0;
+    margin: 7px 0;
 }
 
 .section-4 h1 {
@@ -113,7 +113,7 @@ section > div {
 }
 
 .section-4 input {
-    width: 90%;
+    width: 100%;
     margin: 3px 0 20px 0;
 }
 
