@@ -113,13 +113,13 @@ section > div {
 }
 
 .section-4 input {
-    width: 80%;
+    width: 90%;
     margin: 3px 0 20px 0;
 }
 
 .section-4 input[type="email"] {
     border-radius: 6px;
-    padding: 8px 0;
+    padding: 8px;
     text-align: center;
     font-size: 1.1em;
     background: #cfcfcf;
@@ -160,4 +160,5 @@ footer {
     border-radius: 5px;
     font-size: 1.1em;
     cursor: pointer;
+    width: 90%;
 }
