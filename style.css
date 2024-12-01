@@ -150,3 +150,15 @@ footer {
     font-size: .8em;
     text-align: center;
 }
+
+.lbl-hidden input[type="file"] {
+    position: absolute;
+    top: -1000px;
+}
+
+.lbl-hidden {
+    display: inline-block;
+    background: red;
+    padding: 100px;
+    color: white;
+}
