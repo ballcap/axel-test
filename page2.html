@@ -17,8 +17,10 @@
                 <p>画像をアップロードすると<br/>自動的にあなたの運勢が占われます</p>
                 <label for="in-email">メールアドレスを入力してください</label>
                 <input type="email" id="in-email" placeholder="Emailアドレスを入力してください" required />
-                <label for="in-file">手のひらの画像を入力してください</label>
-                <input type="file" id="in-file" accept="image/png, image/jpeg" />
+                <label class="lbl-hidden">
+                    <span>手のひらの画像を入力してください</span>
+                    <input type="file" accept="image/png, image/jpeg" required />
+                </label>
                 <button type="button" onclick="javascript: void(0);">スタート</button>
             </form>
         </div>
