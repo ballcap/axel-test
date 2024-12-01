@@ -103,10 +103,6 @@ section > div {
     margin: 50px 0 7px 0;
 }
 
-.section-4 input[type="file"] {
-    font-size: 1.5em;
-}
-
 .section-4 h1 {
     font-size: 3em;
     /*background-image: linear-gradient(to right, #de07f7, #ef8280);*/
@@ -157,8 +153,11 @@ footer {
 }
 
 .lbl-hidden {
-    display: inline-block;
-    background: red;
-    padding: 100px;
-    color: white;
+    display: block;
+    background-image: linear-gradient(#defeed, #019ac9);
+    padding: 10px 22px;
+    color: #212121;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
 }
