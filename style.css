@@ -2,6 +2,7 @@ body {
     margin: 0;
     color: #fff;
     background: #06000d;
+    font-size: 1.3em;
 }
 
 section {
@@ -63,12 +64,12 @@ section > div {
 
 .section-3 span {
     color: #fff;
-    font-size: 1.5em;
+    font-size: .7em;
 }
 
 .section-3 p {
     color: #888;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 .section-3 form {
