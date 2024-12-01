@@ -59,7 +59,7 @@ section > div {
     background-image: linear-gradient(to right, #de07f7, #ef8280);
     color: transparent;
     background-clip: text;
-    margin: 20px;
+    margin: 20px 0;
     text-align: left;
 }
 
