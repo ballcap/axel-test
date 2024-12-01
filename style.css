@@ -5,6 +5,18 @@ body {
     font-size: 1.1em;
 }
 
+nav { padding: 20px; }
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #515151;
+}
+
 section {
     display: flex;
     flex-direction: column;
