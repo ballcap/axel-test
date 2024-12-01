@@ -2,7 +2,7 @@ body {
     margin: 0;
     color: #fff;
     background: #06000d;
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 
 section {
@@ -47,7 +47,7 @@ section > div {
 }
 
 .section-2 h1 {
-    font-size: 4em;
+    font-size: 3em;
     background-image: linear-gradient(to right, #7c00cf, #cc1bb8, #c248f1);
     color: transparent;
     background-clip: text;
@@ -55,7 +55,7 @@ section > div {
 }
 
 .section-3 h1 {
-    font-size: 2.5em;
+    font-size: 2.1em;
     background-image: linear-gradient(to right, #de07f7, #ef8280);
     color: transparent;
     background-clip: text;
@@ -67,10 +67,7 @@ section > div {
     font-size: .4em;
 }
 
-.section-3 p {
-    color: #888;
-    font-size: 1.3em;
-}
+.section-3 p { color: #888; }
 
 .section-3 form {
     width: 50%;
@@ -83,6 +80,6 @@ section > div {
 }
 
 footer {
-    font-size: .9em;
+    font-size: .8em;
     text-align: center;
 }
