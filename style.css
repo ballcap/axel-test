@@ -54,6 +54,8 @@ section > div {
     margin: 20px;
 }
 
+.section-3 { text-align: left; }
+
 .section-3 h1 {
     font-size: 2.1em;
     /*background-image: linear-gradient(to right, #de07f7, #ef8280);*/
@@ -61,7 +63,6 @@ section > div {
     color: transparent;
     background-clip: text;
     margin: 20px 0;
-    text-align: left;
 }
 
 .section-3 span {
