@@ -96,6 +96,20 @@ section > div {
     margin: 20px 0;
 }
 
+.section-3 button {
+    border-radius: 6px;
+    border: solid 2px #fff;
+    background: inherit;
+    color: #fff;
+    font-weight: 600;
+    transition: background 2s;
+}
+
+.section-3 button:hover {
+    background: #fff;
+    color: #111;
+}
+
 footer {
     font-size: .8em;
     text-align: center;
