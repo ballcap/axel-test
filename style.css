@@ -56,7 +56,8 @@ section > div {
 
 .section-3 h1 {
     font-size: 2.1em;
-    background-image: linear-gradient(to right, #de07f7, #ef8280);
+    /*background-image: linear-gradient(to right, #de07f7, #ef8280);*/
+    background-image: linear-gradient(to right, blue, green);
     color: transparent;
     background-clip: text;
     margin: 20px 0;
