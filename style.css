@@ -92,6 +92,8 @@ section > div {
 .section-4 form {
     width: 100%;
     padding: 10px 0;
+    border: solid 1px #999;
+    border-radius: 6px;
 }
 
 .section-4 h1 {
