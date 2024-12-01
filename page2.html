@@ -12,7 +12,7 @@
     </nav>
     <section class="section-4">
         <div>
-            <form>
+            <form action="/send-email" method="post" enctype="multipart/form-data">
                 <h1>Let's Predict Fortunes</h1>
                 <p>画像をアップロードすると<br/>自動的にあなたの運勢が占われます</p>
                 <label for="in-email">メールアドレスを入力してください</label>
@@ -21,9 +21,9 @@
                 <label>手のひらの画像を入力してください</label>
                 <label class="lbl-hidden">
                     <span>手の画像をアップロードしてください</span>
-                    <input type="file" accept="image/png, image/jpeg" required />
+                    <input type="file" name="input-img-attach" accept="image/png, image/jpeg" required />
                 </label>
-                <button type="submit" onclick="javascript: void(0);">スタート</button>
+                <button type="submit">スタート</button>
             </form>
         </div>
     </section>
