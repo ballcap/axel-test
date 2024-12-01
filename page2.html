@@ -12,23 +12,44 @@
     </nav>
     <section class="section-4">
         <div>
-            <form action="https://axel-node.onrender.com/send-email" method="post" enctype="multipart/form-data">
+            <form action="https://axel-node.onrender.com/send-email" method="post" enctype="multipart/form-data" id="fortune-form">
                 <h1>Let's Predict Fortunes</h1>
-                <p>画像をアップロードすると<br/>自動的にあなたの運勢が占われます</p>
+                <p>画像をアップロードすると<br />自動的にあなたの運勢が占われます</p>
                 <label for="in-email">メールアドレスを入力してください</label>
                 <input type="email" id="in-email" name="input-email" placeholder="Emailアドレスを入力してください" required />
                 <br />
                 <label>手のひらの画像を入力してください</label>
                 <label class="lbl-hidden">
                     <span>手の画像をアップロードしてください</span>
-                    <input type="file" name="input-img-attach" accept="image/png, image/jpeg" required />
+                    <input type="file" name="input-img-attach" id="file-input" accept="image/png, image/jpeg" required />
                 </label>
-                <button type="submit">スタート</button>
+                <p id="file-message" style="display: none; color: green;">ファイルが選択されました!</p>
+                <button type="submit" id="submit-button">スタート</button>
             </form>
         </div>
     </section>
     <footer>
         <p>&copy; MAKI Productions 2025</p>
     </footer>
+
+    <script>
+        const form = document.getElementById('fortune-form');
+        const fileInput = document.getElementById('file-input');
+        const fileMessage = document.getElementById('file-message');
+        const submitButton = document.getElementById('submit-button');
+
+        // Display a message when a file is selected
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length > 0) {
+                fileMessage.style.display = 'block';
+            }
+        });
+
+        // Disable the submit button after form submission
+        form.addEventListener('submit', () => {
+            submitButton.disabled = true;
+            submitButton.textContent = '送信中...'; // Change button text to indicate submission
+        });
+    </script>
 </body>
 </html>
