@@ -65,11 +65,11 @@ section > div {
 }
 
 .section-2 h1 {
-    font-size: 3em;
+    font-size: 2.6em;
     background-image: linear-gradient(to right, #7c00cf, #cc1bb8, #c248f1);
     color: transparent;
     background-clip: text;
-    margin: 20px;
+    margin: 10px 20px;
 }
 
 .section-3 h1 {
