@@ -52,6 +52,14 @@ section > div {
     margin: 20px;
 }
 
+.section-3 h1 {
+    font-size: 2.5em;
+    background-image: linear-gradient(to right, #0ecdfe, #aa97eb, #cb4feb);
+    color: transparent;
+    background-clip: text;
+    margin: 20px;
+}
+
 .section-3 form {
     width: 50%;
     padding: 10px 0;
