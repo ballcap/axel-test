@@ -49,7 +49,7 @@
 <canvas id="canvas" style="border: 1px solid #000; display:none;"></canvas>
 
 <script>
-    document.getElementById("uploadForm").addEventListener("submit", function(event) {
+    document.getElementById("uploadForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
     const formData = new FormData();
@@ -59,57 +59,51 @@
         method: "POST",
         body: formData
     })
-    .then(response => response.json())
-    .then(data => {
-        // Log the full API response for debugging
-        console.log("Full API Response:", data);
+         .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Server responded with status ${response.status}`);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            console.log("Full API Response:", data);
 
-        // Display the image on the page
-        const img = new Image();
-        img.src = data.image;
-        img.onload = function() {
-            // Clear previous results
-            document.getElementById("result").innerHTML = "";
-            document.getElementById("result").appendChild(img);
+            if (!data.image) {
+                throw new Error("No image data returned from the server.");
+            }
 
-            // Set up canvas dimensions
-            const canvas = document.getElementById("canvas");
-            canvas.width = img.width;
-            canvas.height = img.height;
-            canvas.style.display = "block";
+            // Display the image on the page
+            const img = new Image();
+            img.src = data.image;
+            img.onload = function () {
+                document.getElementById("result").innerHTML = "";
+                document.getElementById("result").appendChild(img);
 
-            const ctx = canvas.getContext("2d");
+                const canvas = document.getElementById("canvas");
+                canvas.width = img.width;
+                canvas.height = img.height;
+                canvas.style.display = "block";
 
-            // Check if predictions are available and non-empty
-            if (data.coordinates && data.coordinates.length > 0) {
-                const points = data.coordinates[0].points;  // Extract points from the first prediction
+                const ctx = canvas.getContext("2d");
 
-                // Log the points for debugging
-                console.log("Detected Points:", points);
+                if (data.coordinates && data.coordinates.length > 0) {
+                    const points = data.coordinates[0].points; // First prediction points
+                    console.log("Detected Points:", points);
 
-                // Draw markers for each point in the 'points' array
-                if (Array.isArray(points) && points.length > 0) {
-                    points.forEach(point => {
-                        const x = point.x;  // x coordinate
-                        const y = point.y;  // y coordinate
-
-                        // Draw a circle or other marker for each coordinate
+                    points.forEach(({ x, y }) => {
                         ctx.beginPath();
-                        ctx.arc(x, y, 5, 0, 2 * Math.PI);  // Adjust the radius if needed
-                        ctx.fillStyle = "red";  // Change the color if needed
+                        ctx.arc(x, y, 5, 0, 2 * Math.PI);
+                        ctx.fillStyle = "red";
                         ctx.fill();
                     });
                 } else {
-                    console.error("No points found in the prediction");
+                    console.error("No points detected in predictions.");
                 }
-            } else {
-                console.error("No predictions found in API response");
-            }
-        };
-    })
-    .catch(error => {
-        document.getElementById("result").innerHTML = `Error: ${error.message}`;
-    });
+            };
+        })
+        .catch((error) => {
+            document.getElementById("result").innerHTML = `Error: ${error.message}`;
+        });
 });
 </script>
 
