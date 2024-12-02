@@ -12,7 +12,7 @@
     </nav>
     <section class="section-4">
         <div>
-            <form action="https://axel-node.onrender.com/send-email" method="post" enctype="multipart/form-data" id="fortune-form">
+            <!--form action="https://axel-node.onrender.com/send-email" method="post" enctype="multipart/form-data" id="fortune-form">
                 <h1>Let's Predict Fortunes</h1>
                 <p>画像をアップロードすると<br />自動的にあなたの運勢が占われます</p>
                 <label for="in-email">メールアドレスを入力してください</label>
@@ -25,14 +25,108 @@
                 </label>
                 <p id="file-message" style="display: none; color: green;">ファイルが選択されました!</p>
                 <button type="submit" id="submit-button">スタート</button>
-            </form>
+        </form-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <form id="uploadForm" enctype="multipart/form-data">
+    <input type="file" name="image" id="image" accept="image/*" required />
+    <button type="submit">Upload</button>
+</form>
+
+<div id="result"></div>
+
+<canvas id="canvas" style="border: 1px solid #000; display:none;"></canvas>
+
+<script>
+    document.getElementById("uploadForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append("image", document.getElementById("image").files[0]);
+
+    fetch("https://node-hand-api.onrender.com/upload", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Log the full API response for debugging
+        console.log("Full API Response:", data);
+
+        // Display the image on the page
+        const img = new Image();
+        img.src = data.image;
+        img.onload = function() {
+            // Clear previous results
+            document.getElementById("result").innerHTML = "";
+            document.getElementById("result").appendChild(img);
+
+            // Set up canvas dimensions
+            const canvas = document.getElementById("canvas");
+            canvas.width = img.width;
+            canvas.height = img.height;
+            canvas.style.display = "block";
+
+            const ctx = canvas.getContext("2d");
+
+            // Check if predictions are available and non-empty
+            if (data.coordinates && data.coordinates.length > 0) {
+                const points = data.coordinates[0].points;  // Extract points from the first prediction
+
+                // Log the points for debugging
+                console.log("Detected Points:", points);
+
+                // Draw markers for each point in the 'points' array
+                if (Array.isArray(points) && points.length > 0) {
+                    points.forEach(point => {
+                        const x = point.x;  // x coordinate
+                        const y = point.y;  // y coordinate
+
+                        // Draw a circle or other marker for each coordinate
+                        ctx.beginPath();
+                        ctx.arc(x, y, 5, 0, 2 * Math.PI);  // Adjust the radius if needed
+                        ctx.fillStyle = "red";  // Change the color if needed
+                        ctx.fill();
+                    });
+                } else {
+                    console.error("No points found in the prediction");
+                }
+            } else {
+                console.error("No predictions found in API response");
+            }
+        };
+    })
+    .catch(error => {
+        document.getElementById("result").innerHTML = `Error: ${error.message}`;
+    });
+});
+</script>
+
+
+            
+
+
+
+
+            
         </div>
     </section>
     <footer>
         <p>&copy; MAKI Productions 2025</p>
     </footer>
 
-    <script>
+    <!--script>
         const form = document.getElementById('fortune-form');
         const fileInput = document.getElementById('file-input');
         const fileMessage = document.getElementById('file-message');
@@ -50,6 +144,6 @@
             submitButton.disabled = true;
             submitButton.textContent = '送信中...'; // Change button text to indicate submission
         });
-    </script>
+</script-->
 </body>
 </html>
