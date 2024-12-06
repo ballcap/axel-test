@@ -12,7 +12,7 @@
     </nav>
     <section class="section-4">
         <div>
-            <!--form action="https://axel-node.onrender.com/send-email" method="post" enctype="multipart/form-data" id="fortune-form">
+            <form action="https://axel-node.onrender.com/send-email" method="post" enctype="multipart/form-data" id="fortune-form">
                 <h1>Let's Predict Fortunes</h1>
                 <p>画像をアップロードすると<br />自動的にあなたの運勢が占われます</p>
                 <label for="in-email">メールアドレスを入力してください</label>
@@ -25,102 +25,14 @@
                 </label>
                 <p id="file-message" style="display: none; color: green;">ファイルが選択されました!</p>
                 <button type="submit" id="submit-button">スタート</button>
-        </form-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <form id="uploadForm" enctype="multipart/form-data">
-    <input type="file" name="image" id="image" accept="image/*" required />
-    <button type="submit">Upload</button>
-</form>
-
-<div id="result"></div>
-
-<canvas id="canvas" style="border: 1px solid #000; display:none;"></canvas>
-
-<script>
-    document.getElementById("uploadForm").addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const formData = new FormData();
-    formData.append("image", document.getElementById("image").files[0]);
-
-    fetch("https://node-hand-api.onrender.com/upload", {
-        method: "POST",
-        body: formData
-    })
-         .then((response) => {
-            if (!response.ok) {
-                throw new Error(`Server responded with status ${response.status}`);
-            }
-            return response.json();
-        })
-        .then((data) => {
-            console.log("Full API Response:", data);
-
-            if (!data.image) {
-                throw new Error("No image data returned from the server.");
-            }
-
-            // Display the image on the page
-            const img = new Image();
-            img.src = data.image;
-            img.onload = function () {
-                document.getElementById("result").innerHTML = "";
-                document.getElementById("result").appendChild(img);
-
-                const canvas = document.getElementById("canvas");
-                canvas.width = img.width;
-                canvas.height = img.height;
-                canvas.style.display = "block";
-
-                const ctx = canvas.getContext("2d");
-
-                if (data.coordinates && data.coordinates.length > 0) {
-                    const points = data.coordinates[0].points; // First prediction points
-                    console.log("Detected Points:", points);
-
-                    points.forEach(({ x, y }) => {
-                        ctx.beginPath();
-                        ctx.arc(x, y, 5, 0, 2 * Math.PI);
-                        ctx.fillStyle = "red";
-                        ctx.fill();
-                    });
-                } else {
-                    console.error("No points detected in predictions.");
-                }
-            };
-        })
-        .catch((error) => {
-            document.getElementById("result").innerHTML = `Error: ${error.message}`;
-        });
-});
-</script>
-
-
-            
-
-
-
-
-            
+            </form>
         </div>
     </section>
     <footer>
         <p>&copy; MAKI Productions 2025</p>
     </footer>
 
-    <!--script>
+    <script>
         const form = document.getElementById('fortune-form');
         const fileInput = document.getElementById('file-input');
         const fileMessage = document.getElementById('file-message');
@@ -138,6 +50,6 @@
             submitButton.disabled = true;
             submitButton.textContent = '送信中...'; // Change button text to indicate submission
         });
-</script-->
+</script>
 </body>
 </html>
